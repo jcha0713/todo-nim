@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/htmx.org@1.8.5"></script>
+</head>
+<body>
+  <h1>TODO</h1>
+  <div>
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+</html>

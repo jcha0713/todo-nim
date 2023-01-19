@@ -1,0 +1,11 @@
+{% extends "template/partials/_base.nimja" %}
+{% block content %}
+<div>
+  {% for todo in items(todos) %}
+    <div>
+    <p>{{todo.description}}</p>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
+

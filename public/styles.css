@@ -1,0 +1,5 @@
+@import "https://unpkg.com/open-props";
+
+body {
+  background-color: var(--blue-0);
+}
