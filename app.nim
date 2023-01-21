@@ -37,7 +37,12 @@ routes:
   get "/":
     resp renderIndex(todos)
 
-  post "/done/@id":
+  patch "/done/@id":
+    var id = parseInt(@"id")
+    toggleDone(id)
+    redirect("/")
+
+  patch "/done/@id":
     var id = parseInt(@"id")
     toggleDone(id)
     redirect("/")
@@ -46,6 +51,11 @@ routes:
     if @"todo".len > 0:
       addTodo(Todo(id: id, description: @"todo", done: false))
       id += 1
+    redirect("/")
+
+  delete "/delete/@id":
+    var id = parseInt(@"id")
+    deleteTodo(id)
     redirect("/")
 
 runForever()

@@ -26,16 +26,27 @@ main {
   max-width: 60%;
 }
 
-main h1 {
+header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--size-3);
   border-bottom: 1px solid var(--stone-5);
   padding-bottom: var(--size-3);
   margin: var(--size-4) 0 var(--size-4) 0;
+}
+
+header h1 {
   font-size: var(--font-size-fluid-1);
+}
+
+header span {
+  color: var(--gray-6);
+  font-size: 1rem;
 }
 
 #add-todo {
   border: 0;
-  margin-top: var(--size-3);
+  margin-top: var(--size-4);
   padding: var(--size-5) var(--size-6);
   background-color: var(--stone-2);
   border-radius: var(--radius-3);
@@ -45,13 +56,18 @@ main h1 {
 
 .todo {
   display: flex;
-  gap: var(--size-3);
+  justify-content: space-between;
+  align-items: center;
   font-size: 1rem;
-  padding: var(--size-2) var(--size-3);
+  padding: var(--size-3) var(--size-3);
   margin: var(--size-2) 0;
   border-radius: var(--radius-3);
   background-color: var(--stone-0);
   font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+.todo:hover {
+  background-color: var(--stone-1);
 }
 
 .todo input[type="checkbox"] {
@@ -69,9 +85,32 @@ main h1 {
 }
 
 .todo-done {
-  background-color: var(--stone-3);
+  background-color: var(--stone-1);
 }
 
 .todo .checked {
+  text-decoration-line: line-through;
+  color: var(--gray-5);
+}
+
+.todo #todo-items {
+  display: flex;
+  align-items: center;
+  gap: var(--size-3);
+}
+
+.todo #todo-actions {
+  display: flex;
+  gap: var(--size-4);
+}
+
+.todo #todo-actions svg {
+  display: block;
+  cursor: pointer;
+  width: var(--size-4);
+  color: var(--gray-7);
+}
+
+.todo #todo-actions svg:hover {
   color: var(--gray-5);
 }

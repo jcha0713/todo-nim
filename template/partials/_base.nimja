@@ -12,7 +12,10 @@
 </head>
 <body hx-boost="true">
   <main>
-    <h1>Todo List</h1>
+    <header>
+      <h1>Todo List</h1>
+      <span>{{ todos.len }}</span>
+    </header>
     <div>
       {% block content %}
       {% endblock %}

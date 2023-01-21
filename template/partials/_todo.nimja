@@ -1,8 +1,13 @@
 <div {% if todo.done %} class="todo todo-done" {% else %} class="todo" {% endif %}>
-  <div>
-    <input name="done" type="checkbox" {% if todo.done %} checked {% endif %} hx-post="/done/{{todo.id}}" type="checkbox" hx-trigger="change" hx-target="body" />
+  <div id="todo-items">
+    <input name="done" type="checkbox" {% if todo.done %} checked {% endif %} hx-patch="/done/{{todo.id}}" type="checkbox" hx-trigger="change" hx-target="body" />
+    <p id="todo-{{todo.id}}" {% if todo.done %} class="checked" {% endif %}>
+      {{todo.description}}
+    </p>
   </div>
-  <p id="todo-{{todo.id}}" {% if todo.done %} class="checked" {% endif %}>
-    {{todo.description}}
-  </p>
+  <div id="todo-actions">
+    <span hx-delete="/delete/{{todo.id}}" hx-target="body">
+      {% importnimja "template/partials/_delete.nimja" %}
+    </span>
+  </div>
 </div>
