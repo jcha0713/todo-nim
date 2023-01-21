@@ -6,8 +6,11 @@
     </p>
   </div>
   <div id="todo-actions">
-    <span hx-delete="/delete/{{todo.id}}" hx-target="body">
+    <button id="edit-btn" hx-get="/edit/{{todo.id}}" hx-target="#todo-{{todo.id}}" hx-swap="outerHTML">
+      {% importnimja "template/partials/_edit.nimja" %}
+    </button>
+    <button id="delete-btn" hx-delete="/{{todo.id}}" hx-target="body">
       {% importnimja "template/partials/_delete.nimja" %}
-    </span>
+    </button>
   </div>
 </div>

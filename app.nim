@@ -33,13 +33,21 @@ proc toggleDone(id: int) =
 proc renderIndex(todos: seq[Todo]): string =
   compileTemplateFile(getScriptDir() / "template/index.nimja")
 
+proc renderInput(todo: Todo): string =
+  compileTemplateFile(getScriptDir() / "template/partials/_input.nimja")
+
 routes:
   get "/":
     resp renderIndex(todos)
 
-  patch "/done/@id":
+  get "/edit/@id":
     var id = parseInt(@"id")
-    toggleDone(id)
+    var todo = filter(todos, proc(item: Todo): bool = item.id == id)[0]
+    resp renderInput(todo)
+
+  patch "/@id":
+    var id = parseInt(@"id")
+    editTodo(id, @"edit")
     redirect("/")
 
   patch "/done/@id":
@@ -53,7 +61,7 @@ routes:
       id += 1
     redirect("/")
 
-  delete "/delete/@id":
+  delete "/@id":
     var id = parseInt(@"id")
     deleteTodo(id)
     redirect("/")
