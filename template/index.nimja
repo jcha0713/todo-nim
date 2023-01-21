@@ -2,8 +2,8 @@
 {% block content %}
 <div>
   {% for todo in items(todos) %}
-    <div>
-    <p>{{todo.description}}</p>
+  <div>
+    {% importnimja "template/partials/_todo.nimja" %}
   </div>
   {% endfor %}
 </div>

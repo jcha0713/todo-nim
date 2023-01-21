@@ -1,0 +1,8 @@
+<div {% if todo.done %} class="todo todo-done" {% else %} class="todo" {% endif %}>
+  <div>
+    <input name="done" type="checkbox" {% if todo.done %} checked {% endif %} hx-post="/done/{{todo.id}}" type="checkbox" hx-trigger="change" hx-target="body" />
+  </div>
+  <p id="todo-{{todo.id}}" {% if todo.done %} class="checked" {% endif %}>
+    {{todo.description}}
+  </p>
+</div>

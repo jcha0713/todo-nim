@@ -4,14 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <script src="https://unpkg.com/htmx.org@1.8.5"></script>
 </head>
-<body>
-  <h1>TODO</h1>
-  <div>
-    {% block content %}
-    {% endblock %}
-  </div>
+<body hx-boost="true">
+  <main>
+    <h1>Todo List</h1>
+    <div>
+      {% block content %}
+      {% endblock %}
+    </div>
+    <input name="todo" type="text" placeholder="Add a new task..." hx-post="/add" hx-target="body" id="add-todo" hx-trigger="keyup[key == 'Enter'] from:body" hx-include="#add-todo">
+    </input>
+  </main>
 </body>
 </html>
