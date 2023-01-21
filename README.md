@@ -2,6 +2,8 @@
 
 A small todo list built with htmx and Nim, and no javascript.
 
+https://user-images.githubusercontent.com/29053796/213889923-5496aafb-c576-4c8e-95a2-41831f94d013.mp4
+
 ## build
 
 ```bash
