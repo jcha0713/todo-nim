@@ -1,5 +1,73 @@
 @import "https://unpkg.com/open-props";
 
+*,
+*:before,
+*:after {
+  margin: 0;
+}
+
+input,
+textarea {
+  border: none;
+}
+
 body {
-  background-color: var(--blue-0);
+  color: var(--gray-9);
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--stone-0);
+  /* font-size: var(--font-size-fluid-1); */
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: var(--size-4) var(--size-10);
+}
+
+main h1 {
+  border-bottom: 1px solid var(--stone-5);
+  padding-bottom: var(--size-3);
+  margin: var(--size-4) 0 var(--size-4) 0;
+  font-size: var(--font-size-fluid-1);
+}
+
+#add-todo {
+  border: 0;
+  margin-top: var(--size-3);
+  padding: var(--size-5) var(--size-6);
+  background-color: var(--stone-2);
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-0);
+  font-size: 1.1rem;
+}
+
+.todo {
+  display: flex;
+  gap: var(--size-3);
+  font-size: 1rem;
+  padding: var(--size-2) var(--size-3);
+  margin: var(--size-2) 0;
+  border-radius: var(--radius-3);
+  background-color: var(--stone-0);
+}
+
+.todo input[type="checkbox"] {
+  appearance: none;
+  width: var(--size-4);
+  height: var(--size-4);
+  border: 1px solid var(--stone-5);
+  border-radius: var(--radius-2);
+}
+
+.todo input[type="checkbox"]:checked {
+  background: url(./check.svg) no-repeat top left;
+  background-size: contain;
+}
+
+.todo-done {
+  background-color: var(--stone-3);
+}
+
+.todo .checked {
+  color: var(--gray-5);
 }
