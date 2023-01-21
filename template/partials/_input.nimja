@@ -1,1 +1,1 @@
-<input hx-patch="/{{todo.id}}" type="text" name="edit" autofocus hx-target="body" hx-trigget="keyup[key == Enter]">
+<input id="edit-todo" hx-patch="/{{todo.id}}" type="text" name="edit" autofocus hx-target="body" hx-trigget="keyup[key == Enter]">

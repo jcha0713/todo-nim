@@ -97,6 +97,11 @@ header span {
   background-color: var(--blue-7);
 }
 
+.todo #edit-todo {
+  background-color: var(--stone-1);
+  outline: none;
+}
+
 .todo-done {
   background-color: var(--stone-1);
 }
